@@ -1,0 +1,20 @@
+services:
+
+  emby:
+    image: emby/embyserver:latest   # emby/embyserver_arm64v8:latest | emby/embyserver_arm32v7:latest 
+    container_name: emby
+    restart: unless-stopped
+    ports:
+      - "8096:8096"
+      - "8920:8920"
+    environment:
+      - UID=1000
+      - GID=1000
+      - TZ=America/Santiago
+    volumes:
+      - ./library:/config
+      - ./tvshows:/mnt/share1
+      - ./movies:/mnt/share2
+      - /mnt:/mnt/discos
+
+
