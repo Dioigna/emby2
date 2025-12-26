@@ -2,7 +2,7 @@ services:
 
   emby:
     image: emby/embyserver:latest   # emby/embyserver_arm64v8:latest | emby/embyserver_arm32v7:latest 
-    container_name: emby
+    container_name: emby2
     restart: unless-stopped
     ports:
       - "8097:8097"
@@ -16,6 +16,7 @@ services:
       - ./tvshows:/mnt/share1
       - ./movies:/mnt/share2
       - /mnt:/mnt/discos
+
 
 
 
